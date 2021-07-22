@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.egidioo.projetoclimaandroid.R;
 import br.com.egidioo.projetoclimaandroid.models.Clima;
+import br.com.egidioo.projetoclimaandroid.models.Results;
 import br.com.egidioo.projetoclimaandroid.retrofit.RetrofitConfig;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Clima> call, Response<Clima> response) {
 
-                Clima climaList = response.body().results;
-                System.out.println(climaList);
-                Log.d("teste", String.valueOf(climaList));
+                if(response.body() != null){
+                    Results results = response.body().getResults();
+                    System.out.println(results);
+                    Log.d("teste", String.valueOf(results));
+                }
+
             }
 
             @Override
