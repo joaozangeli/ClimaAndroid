@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
@@ -16,21 +18,29 @@ public class Android {
 
     private Context context;
     private Location location;
+    private Activity activity;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
     public Android(Context context) {
         this.context = context;
+        this.activity = (Activity) context;
     }
 
     public void trocarDeActivity(Class<?> activity){
         Intent intent = new Intent(context, activity);
 
-
-        
         context.startActivity(intent);
     }
 
     public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void getCurrentLocation() {
         LocationManager locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
         if (context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && context.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -48,12 +58,10 @@ public class Android {
             this.location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
 
         }
-
-        return this.location;
     }
 
     private void isReadGpsAllowed() {
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) !=
+        if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED  ){
 
             ActivityCompat.requestPermissions((Activity) context,
@@ -63,6 +71,26 @@ public class Android {
             getLocation();
         }
 
+    }
+
+    public void mensagemCurta(String mensagem){
+
+        Toast.makeText(context,mensagem,Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void mensagemLonga(String mensagem){
+
+        Toast.makeText(context,mensagem,Toast.LENGTH_LONG).show();
+
+    }
+
+    public void esconderComponente(View view){
+        view.setVisibility(View.GONE);
+    }
+
+    public void mostrarComponente(View view){
+        view.setVisibility(View.VISIBLE);
     }
 
 

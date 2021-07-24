@@ -11,6 +11,8 @@ import retrofit2.http.POST;
 
 public interface ClimaService {
 
+
+
     String lat= "-20.3174967";
     String lng= "-40.3085394";
 
