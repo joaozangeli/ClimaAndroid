@@ -1,5 +1,6 @@
 package br.com.egidioo.projetoclimaandroid.utilitarios;
 
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -32,9 +33,7 @@ public class Android {
         context.startActivity(intent);
     }
 
-    public Location getLocation() {
-        return location;
-    }
+    public Location getLocation() { return location; }
 
     public void setLocation(Location location) {
         this.location = location;
@@ -55,8 +54,7 @@ public class Android {
         this.location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (this.location == null)
         {
-            this.location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-
+          this.location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
         }
     }
 

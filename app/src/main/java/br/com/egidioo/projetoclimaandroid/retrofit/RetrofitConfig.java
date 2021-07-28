@@ -13,7 +13,7 @@ public class RetrofitConfig {
         OkHttpClient client = new OkHttpClient.Builder().build();
 
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.hgbrasil.com")
+                .baseUrl("https://api.hgbrasil.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

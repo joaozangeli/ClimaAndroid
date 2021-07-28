@@ -13,6 +13,7 @@ import br.com.egidioo.projetoclimaandroid.R;
 import br.com.egidioo.projetoclimaandroid.models.Clima;
 import br.com.egidioo.projetoclimaandroid.models.Results;
 import br.com.egidioo.projetoclimaandroid.retrofit.RetrofitConfig;
+import br.com.egidioo.projetoclimaandroid.services.ClimaService;
 import br.com.egidioo.projetoclimaandroid.utilitarios.Android;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //possivelmente mudar para climaservice, dps pegar apenas lat e lng
+        //possivelmente mudar para climaservice, dps pegar apenas lat e lngq
         Android android = new Android(MainActivity.this);
         android.getCurrentLocation();
         Location location = android.getLocation();
         System.out.println(location);
 
 
-        Call<Clima> call = new RetrofitConfig().setClimaService().listarClima();
+        Call<Clima> call = new RetrofitConfig().setClimaService().listarClima(ClimaService.API_KEY, String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()));
         call.enqueue(new Callback<Clima>() {
             @Override
             public void onResponse(Call<Clima> call, Response<Clima> response) {
