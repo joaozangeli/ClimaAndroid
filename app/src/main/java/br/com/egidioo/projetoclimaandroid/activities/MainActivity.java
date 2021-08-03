@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import java.sql.SQLOutput;
-import java.util.List;
-
 import br.com.egidioo.projetoclimaandroid.R;
 import br.com.egidioo.projetoclimaandroid.models.Clima;
 import br.com.egidioo.projetoclimaandroid.models.Results;
@@ -44,15 +41,53 @@ public class MainActivity extends AppCompatActivity {
                     Results results = response.body().getResults();
                     System.out.println(results);
                     Log.d("teste", String.valueOf(results));
-                    /**
-                     * TextView descricao =  findViewById(R.id.textView2);
-                     * if results.getTemp() < 20 {
-                     *  descricao.setText("ta frio sla");
-                     * }
-                     */
+
+                    TextView activity_main_text_view_condicao =  findViewById(R.id.activity_main_text_view_condicao);
+                    switch(results.getCondition_slug()) {
+                        case "storm":
+                            activity_main_text_view_condicao.setText("Tempestade");
+                            break;
+                        case "snow":
+                            activity_main_text_view_condicao.setText("Nevando");
+                            break;
+                        case "hail":
+                            activity_main_text_view_condicao.setText("Chovendo granizo");
+                            break;
+                        case "rain":
+                            activity_main_text_view_condicao.setText("Está chovendo");
+                            break;
+                        case "fog":
+                            activity_main_text_view_condicao.setText("Está neblinando");
+                            break;
+                        case "clear_day":
+                            activity_main_text_view_condicao.setText("O dia está limpo");
+                            break;
+                        case "clear_night":
+                            activity_main_text_view_condicao.setText("A noite está limpa");
+                            break;
+                        case "cloud":
+                            activity_main_text_view_condicao.setText("Está nublado");
+                            break;
+                        case "cloudly_day":
+                            activity_main_text_view_condicao.setText("Dia nublado");
+                            break;
+                        case "cloudly_night":
+                            activity_main_text_view_condicao.setText("Noite nublado");
+                            break;
+                        case "none_day":
+                            activity_main_text_view_condicao.setText("erro ao obter condição do dia");
+                            break;
+                        case "none_night":
+                            activity_main_text_view_condicao.setText("erro ao obter condição da noite");
+                            break;
+
+                        default:
+                            activity_main_text_view_condicao.setText("Condição não encontrada!");
+                    }
+
                     TextView temperatura =  findViewById(R.id.textView2);
                     String temp = String.valueOf(results.getTemp());
-                    temperatura.setText(temp);
+                    temperatura.setText(temp+ "°C");
                 }
             }
 
