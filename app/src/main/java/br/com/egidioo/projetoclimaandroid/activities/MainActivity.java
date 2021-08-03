@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.sql.SQLOutput;
 import java.util.List;
@@ -43,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
                     Results results = response.body().getResults();
                     System.out.println(results);
                     Log.d("teste", String.valueOf(results));
+                    /**
+                     * TextView descricao =  findViewById(R.id.textView2);
+                     * if results.getTemp() < 20 {
+                     *  descricao.setText("ta frio sla");
+                     * }
+                     */
+                    TextView temperatura =  findViewById(R.id.textView2);
+                    String temp = String.valueOf(results.getTemp());
+                    temperatura.setText(temp);
                 }
             }
 
