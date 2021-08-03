@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             activity_main_text_view_condicao.setText("Dia nublado");
                             break;
                         case "cloudly_night":
-                            activity_main_text_view_condicao.setText("Noite nublado");
+                            activity_main_text_view_condicao.setText("Noite nublada");
                             break;
                         case "none_day":
                             activity_main_text_view_condicao.setText("erro ao obter condição do dia");
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
                             activity_main_text_view_condicao.setText("Condição não encontrada!");
                     }
 
-                    TextView temperatura =  findViewById(R.id.textView2);
+                    TextView activity_main_text_view_temperatura =  findViewById(R.id.activity_main_text_view_temperatura);
                     String temp = String.valueOf(results.getTemp());
-                    temperatura.setText(temp+ "°C");
+                    activity_main_text_view_temperatura.setText(temp+ "°C");
                 }
             }
 

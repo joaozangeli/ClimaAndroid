@@ -21,12 +21,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/activity_main_text_view_temperatura"
         android:layout_width="120dp"
         android:layout_height="66dp"
         android:layout_marginTop="156dp"
         android:gravity="center"
-        android:textColor="@color/design_default_color_background"
+        android:textColor="@color/branco"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.482"
@@ -39,11 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/branco"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_text_view_temperatura"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/activity_main_text_view_temperatura"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_text_view_temperatura" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
