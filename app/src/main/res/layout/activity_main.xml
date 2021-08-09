@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/meubg"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:id="@+id/mylayout">
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +25,7 @@
         android:id="@+id/activity_main_text_view_temperatura"
         android:layout_width="120dp"
         android:layout_height="66dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="84dp"
         android:gravity="center"
         android:textColor="@color/branco"
         android:textSize="34sp"

@@ -1,6 +1,8 @@
 package br.com.egidioo.projetoclimaandroid.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.location.Location;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-
+ConstraintLayout constraintLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         android.getCurrentLocation();
         Location location = android.getLocation();
         System.out.println(location);
-
+        constraintLayout = (ConstraintLayout) findViewById(R.id.mylayout);
 
         Call<Clima> call = new RetrofitConfig().setClimaService().listarClima(ClimaService.API_KEY, String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()));
         call.enqueue(new Callback<Clima>() {
@@ -45,44 +47,56 @@ public class MainActivity extends AppCompatActivity {
                     TextView activity_main_text_view_condicao =  findViewById(R.id.activity_main_text_view_condicao);
                     switch(results.getCondition_slug()) {
                         case "storm":
-                            activity_main_text_view_condicao.setText("Tempestade");
+                            activity_main_text_view_condicao.setText(R.string.tempestade);
                             break;
                         case "snow":
-                            activity_main_text_view_condicao.setText("Nevando");
+                            activity_main_text_view_condicao.setText(R.string.Nevando);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.snow));
                             break;
                         case "hail":
-                            activity_main_text_view_condicao.setText("Chovendo granizo");
+                            activity_main_text_view_condicao.setText(R.string.Chovendo_granizo);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.hail));
                             break;
                         case "rain":
-                            activity_main_text_view_condicao.setText("Está chovendo");
+                            activity_main_text_view_condicao.setText(R.string.Está_chovendo);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.rain));
                             break;
                         case "fog":
-                            activity_main_text_view_condicao.setText("Está neblinando");
+                            activity_main_text_view_condicao.setText(R.string.Está_neblinando);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.fog));
                             break;
                         case "clear_day":
-                            activity_main_text_view_condicao.setText("O dia está limpo");
+                            activity_main_text_view_condicao.setText(R.string.O_dia_está_limpo);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clear_day));
                             break;
                         case "clear_night":
-                            activity_main_text_view_condicao.setText("A noite está limpa");
+                            activity_main_text_view_condicao.setText(R.string.A_noite_está_limpa);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clear_day));
                             break;
                         case "cloud":
-                            activity_main_text_view_condicao.setText("Está nublado");
+                            activity_main_text_view_condicao.setText(R.string.Está_nublado);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clouds));
                             break;
                         case "cloudly_day":
-                            activity_main_text_view_condicao.setText("Dia nublado");
+                            activity_main_text_view_condicao.setText(R.string.Dia_nublado);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.cloudly_day));
                             break;
                         case "cloudly_night":
-                            activity_main_text_view_condicao.setText("Noite nublada");
+                            activity_main_text_view_condicao.setText(R.string.Noite_nublada);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.cloudly_night));
                             break;
                         case "none_day":
-                            activity_main_text_view_condicao.setText("erro ao obter condição do dia");
+                            activity_main_text_view_condicao.setText(R.string.erro_ao_obter_condição_do_dia);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.error));
                             break;
                         case "none_night":
-                            activity_main_text_view_condicao.setText("erro ao obter condição da noite");
+                            activity_main_text_view_condicao.setText(R.string.erro_ao_obter_condição_da_noite);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.error));
                             break;
-
                         default:
-                            activity_main_text_view_condicao.setText("Condição não encontrada!");
+                            activity_main_text_view_condicao.setText(R.string.Condição_não_encontrada);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.error));
+
                     }
 
                     TextView activity_main_text_view_temperatura =  findViewById(R.id.activity_main_text_view_temperatura);
