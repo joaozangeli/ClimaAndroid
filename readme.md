@@ -1,7 +1,10 @@
 # Clima Android
 
 ##  Descrição
-O **ClimaAndroid** é um aplicativo que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura em graus Celsius e a condição do clima atual.
+O **Clima** é um aplicativo Android que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
+
+## Procedimentos
+Ao acessar o aplicativo com o GPS habilitado, uma requisição é feita a API que estamos utilizando, e as temperaturas máxima, mínima e a condição do clima são trazidas para a interface.
 
 # 🛠 Tecnologias
 - Retrofit
