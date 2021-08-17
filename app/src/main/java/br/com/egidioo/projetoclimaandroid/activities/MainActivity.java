@@ -48,6 +48,7 @@ ConstraintLayout constraintLayout;
                     switch(results.getCondition_slug()) {
                         case "storm":
                             activity_main_text_view_condicao.setText(R.string.tempestade);
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.storm));
                             break;
                         case "snow":
                             activity_main_text_view_condicao.setText(R.string.Nevando);
@@ -67,11 +68,11 @@ ConstraintLayout constraintLayout;
                             break;
                         case "clear_day":
                             activity_main_text_view_condicao.setText(R.string.O_dia_está_limpo);
-                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clear_day));
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clearday));
                             break;
                         case "clear_night":
                             activity_main_text_view_condicao.setText(R.string.A_noite_está_limpa);
-                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clear_day));
+                            constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.clearnight));
                             break;
                         case "cloud":
                             activity_main_text_view_condicao.setText(R.string.Está_nublado);

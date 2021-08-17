@@ -1,10 +1,7 @@
 # Clima Android
 
 ##  Descrição
-O **Clima** é um aplicativo Android que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
-
-## Procedimentos
-Ao acessar o aplicativo com o GPS habilitado, uma requisição é feita a API que estamos utilizando, e as temperaturas máxima, mínima e a condição do clima são trazidas para a interface.
+O **Funny Weather** é um aplicativo android que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
 
 # 🛠 Tecnologias
 - Retrofit
@@ -34,6 +31,12 @@ O **HG Weather** é uma API que fornece dados de previsão do tempo e condiçõe
 **Incidência 2:** none_night Caso a condição climática da noite não seja encontrada, essa condição é acessada e exibe sua mensagem de erro.
 
 **Incidência 3:** default Caso nenhuma condição climática seja encontrada, essa condição é acessada e exibe sua mensagem de erro.
+
+# 🔗 Links Importantes
+- **Retrofit** - https://square.github.io/retrofit/
+- **SugarORM** - https://satyan.github.io/sugar/
+- **IDE Android Studio** - https://developer.android.com/studio
+- **Documentação API** - https://hgbrasil.com/status/weather
 
 # 👤 Membros
 - João Egídio (back-end)

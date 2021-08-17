@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">ProjetoClimaAndroid</string>
-    <string name="tempestade">Tempestade</string>
-    <string name="Nevando">Nevando</string>
-    <string name="Chovendo_granizo">Chovendo granizo</string>
-    <string name="Está_chovendo">Está chovendo</string>
-    <string name="Está_neblinando">Está neblinando</string>
-    <string name="O_dia_está_limpo">O dia está limpo</string>
-    <string name="A_noite_está_limpa">A noite está limpa</string>
-    <string name="Está_nublado">Está nublado</string>
-    <string name="Dia_nublado">Dia nublado</string>
-    <string name="Noite_nublada">Noite nublada</string>
+    <string name="tempestade">Haverá uma tempestade</string>
+    <string name="Nevando">Haverá neve</string>
+    <string name="Chovendo_granizo">Choverá granizo</string>
+    <string name="Está_chovendo">Irá chover</string>
+    <string name="Está_neblinando">Dia com muita neblina</string>
+    <string name="O_dia_está_limpo">O dia será limpo</string>
+    <string name="A_noite_está_limpa">A noite será limpa</string>
+    <string name="Está_nublado">O dia será com muitas nuvens</string>
+    <string name="Dia_nublado">O dia será nublado</string>
+    <string name="Noite_nublada">A noite será nublada</string>
     <string name="erro_ao_obter_condição_do_dia">erro ao obter condição do dia</string>
     <string name="erro_ao_obter_condição_da_noite">erro ao obter condição da noite</string>
     <string name="Condição_não_encontrada">Condição não encontrada!</string>
