@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import br.com.egidioo.projetoclimaandroid.R;
 import br.com.egidioo.projetoclimaandroid.models.Clima;
+import br.com.egidioo.projetoclimaandroid.models.Forecast;
 import br.com.egidioo.projetoclimaandroid.models.Results;
 import br.com.egidioo.projetoclimaandroid.retrofit.RetrofitConfig;
 import br.com.egidioo.projetoclimaandroid.services.ClimaService;
@@ -38,15 +39,16 @@ ConstraintLayout constraintLayout;
         call.enqueue(new Callback<Clima>() {
             @Override
             public void onResponse(Call<Clima> call, Response<Clima> response) {
-
                 if(response.body() != null){
+
                     Results results = response.body().getResults();
+                    Forecast forecast = results.getForecast().get(1);
                     System.out.println(results);
                     Log.d("teste", String.valueOf(results));
-
                     TextView activity_main_text_view_condicao =  findViewById(R.id.activity_main_text_view_condicao);
-                    switch(results.getCondition_slug()) {
+                    switch(forecast.getCondition()) {
                         case "storm":
+                            //aqui ao inves de pegar os textos pelo strings.xml vc pode pegar pelo .getDescription(), q vem do site
                             activity_main_text_view_condicao.setText(R.string.tempestade);
                             constraintLayout.setBackground(ContextCompat.getDrawable(MainActivity.this, R.drawable.storm));
                             break;
@@ -100,9 +102,13 @@ ConstraintLayout constraintLayout;
 
                     }
 
-                    TextView activity_main_text_view_temperatura =  findViewById(R.id.activity_main_text_view_temperatura);
-                    String temp = String.valueOf(results.getTemp());
-                    activity_main_text_view_temperatura.setText(temp+ "°C");
+                    TextView activity_main_text_view_max =  findViewById(R.id.activity_main_text_view_max);
+                    TextView activity_main_text_view_min =  findViewById(R.id.activity_main_text_view_min);
+                    String min = String.valueOf(forecast.getMin());
+                    String max = String.valueOf(forecast.getMax());
+
+                    activity_main_text_view_max.setText(max+ "°C");
+                    activity_main_text_view_min.setText(min+ "°C");
                 }
             }
 
