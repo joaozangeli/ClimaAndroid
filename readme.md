@@ -1,6 +1,7 @@
 # Clima Android
+
 <p align="center">
-  <img src="imagem_android.png" />
+  <img src="imagem_android.png"/>
 </p>
 
 ##  Descrição
