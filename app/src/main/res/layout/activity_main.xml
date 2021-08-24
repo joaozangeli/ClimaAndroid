@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Climão"
-        android:textColor="@color/ouro"
+        android:textColor="@color/branco"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +25,12 @@
         android:id="@+id/activity_main_text_view_max"
         android:layout_width="120dp"
         android:layout_height="66dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="88dp"
         android:gravity="center"
-        android:textColor="@color/ouro"
+        android:textColor="@color/branco"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/activity_main_text_view_min"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/activity_main_text_view_min"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_text_view_min" />
 
@@ -39,7 +40,7 @@
         android:layout_height="66dp"
         android:layout_marginTop="84dp"
         android:gravity="center"
-        android:textColor="@color/ouro"
+        android:textColor="@color/branco"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.482"
@@ -52,11 +53,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:gravity="center"
-        android:textColor="@color/ouro"
+        android:textColor="@color/branco"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/activity_main_text_view_max"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/activity_main_text_view_max"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_text_view_max" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Máxima"
+        android:textColor="@color/branco"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Mínima"
+        android:textColor="@color/branco"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_text_view_min"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_text_view_min"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_text_view_min" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
