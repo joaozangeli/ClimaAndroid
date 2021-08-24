@@ -1,4 +1,7 @@
 # Clima Android
+<p align="center">
+  <img src="imagem_android.png" />
+</p>
 
 ##  Descrição
 O **Funny Weather** é um aplicativo android que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
