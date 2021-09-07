@@ -17,7 +17,7 @@ O **Funny Weather** é um aplicativo android que têm como propósito trazer inf
 - É recomendado o uso da versão OREO 26 do android para o emulador. 
 - Recomendado uso do Gradle para compilação do código.
 
-# 🖥️ Deploy
+# 🖥️ Instalação
 ```bash
 # Clonar o repositorio
 git clone https://github.com/joaozangeli/ClimaAndroid
